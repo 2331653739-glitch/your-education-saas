@@ -1,0 +1,18 @@
+// prisma/schema.prisma
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// 下面的 model 保持不变...
+model Submission {
+  id           String   @id @default(uuid())
+  studentId    String
+  status       String   @default("PENDING")
+  appealReason String?
+  updatedAt    DateTime @updatedAt
+}
