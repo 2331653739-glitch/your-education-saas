@@ -1,9 +1,8 @@
-
 'use client'
 
 import { useActionState, useEffect, useRef } from 'react';
 import { useFormStatus } from 'react-dom';
-import { submitAppeal, type ActionState } from '@/app/actions/assignment';
+import { submitAppeal, type ActionState } from '../actions/assignment';
 import { ArrowLeftIcon, ShieldCheckIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline'; // 引入极简图标
 
 const initialState: ActionState = { status: 'idle', message: '' };

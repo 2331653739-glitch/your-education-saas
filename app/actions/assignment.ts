@@ -1,4 +1,3 @@
-
 'use server'
 
 import { revalidatePath } from 'next/cache';
@@ -6,7 +5,13 @@ import { db } from '@/lib/db';
 import { z } from 'zod';
 import sanitizeHtml from 'sanitize-html'; // 引入工业级 HTML 净化器
 import { Redis } from '@upstash/redis';   // 引入 Serverless Redis
-
+// 模拟函数，后续可对接真正的 Auth 逻辑
+async function getSession(): Promise<{ userId: string } | null> { 
+  return { userId: "test-user-id" }; 
+}
+async function getClientIp(): Promise<string> { 
+  return "127.0.0.1"; 
+}
 // 初始化 Upstash Redis 实例 (用于高速限流)
 const redis = Redis.fromEnv();
 
