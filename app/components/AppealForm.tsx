@@ -1,6 +1,6 @@
 'use client'
-
-import { useActionState, useEffect, useRef } from 'react';
+import React, { useRef, useEffect } from 'react'; // 👈 关键是这一行，要把这两个工具导进来
+import { useFormState } from 'react-dom'; // 注意是从 'react-dom' 导入，不是 'react'
 import { useFormStatus } from 'react-dom';
 import { submitAppeal, type ActionState } from '../actions/assignment';
 import { ArrowLeftIcon, ShieldCheckIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline'; // 引入极简图标
@@ -33,7 +33,7 @@ function SubmitButton() {
 }
 
 export const AppealForm = ({ submissionId }: { submissionId: string }) => {
-  const [state, formAction] = useActionState(submitAppeal, initialState);
+  const [state, formAction] = useFormState(submitAppeal, initialState);
   
   // 任务 4: 极客级无障碍体验 (A11y) - 错误焦点劫持
   const textareaRef = useRef<HTMLTextAreaElement>(null);

@@ -1,0 +1,14 @@
+{
+  "node": {
+    "039665d2ea6ae527a6f98241d28ea16e48f29e7a": {
+      "workers": {
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fworkspaces%2Fyour-education-saas%2Fapp%2Factions%2Fassignment.ts%22%2C%5B%22submitAppeal%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/page": "action-browser"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "V8u1nht8xTCMK2xoMjVBROTvKhDht6urYKTo7KgQmRI="
+}
